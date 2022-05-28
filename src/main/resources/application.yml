@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url : jdbc:mysql://localhost:3306/security?serverTimezone=UTC
+    username: cos
+    password: cos1234
+  redis:
+    host: localhost
+    port: 6379
+  session:
+    store-type: redis
+    timeout: 180m
+
+  mvc:
+    view:
+      prefix: /templates
+      suffix: .muchache
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+  devtools:
+    livereload:
+      enabled: true
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest
+    template:
+      default-receive-queue: test
+server:
+  port: 80
+  servlet:
+    context-path: /
